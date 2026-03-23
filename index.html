@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BYD — Gratitude</title>
+
+<style>
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
+  background: linear-gradient(180deg, #020617, #0f172a);
+  color: #e2e8f0;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 720px;
+  margin: auto;
+  padding: 24px;
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+
+.tagline {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #94a3b8;
+  margin-top: 8px;
+}
+
+/* NOTE */
+.note {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 20px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* CARD */
+.card {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 18px;
+  border-radius: 16px;
+  margin-bottom: 16px;
+
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.06);
+
+  transform: translateY(30px);
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+/* ANIMATION ACTIVE */
+.card.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* IMAGE */
+.card img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255,255,255,0.15);
+}
+
+/* TEXT */
+.info h3 {
+  font-size: 16px;
+}
+
+.role {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-bottom: 6px;
+}
+
+.info p {
+  font-size: 14px;
+  color: #cbd5f5;
+}
+
+/* FOOTER */
+.footer {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 14px;
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+.signature {
+  margin-top: 12px;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+/* HOVER */
+.card:hover {
+  transform: scale(1.02);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+  <h1>BYD Auto Co.</h1>
+<div class="tagline">BUILD YOUR DREAMS</div>
+</div>
+
+<div class="note">
+In times shaped by geopolitical challenges and shifting global realities, I find it important to pause and personally thank those who have stood firmly beside me and the organization.
+</div>
+
+<!-- CARDS -->
+
+<div class="card">
+  <img src="IMAGE1">
+  <div class="info">
+    <h3>Stella Li</h3>
+    <div class="role">Executive Vice President</div>
+    <p>You have been a constant pillar through our global expansion. Your clarity, resilience, and leadership have helped us move forward with confidence.</p>
+  </div>
+</div>
+
+<div class="card">
+  <img src="IMAGE2">
+  <div class="info">
+    <h3>BlackRock & Vanguard</h3>
+    <div class="role">Institutional Investors</div>
+    <p>Your continued belief in our vision and operations has given us the stability and confidence to keep building, even in uncertain times.</p>
+  </div>
+</div>
+
+<div class="card">
+  <img src="IMAGE3">
+  <div class="info">
+    <h3>Berkshire Hathaway (Warren Buffett)</h3>
+    <div class="role">Strategic Investor</div>
+    <p>I deeply value the trust you have placed in us, especially during periods of challenge and external uncertainty.</p>
+  </div>
+</div>
+
+<div class="card">
+  <img src="IMAGE4">
+  <div class="info">
+    <h3>Dario Ongsono</h3>
+    <div class="role">Co-Founder & CTO</div>
+    <p>Your role in shaping our technological and strategic direction has been central to where we stand today across EVs, batteries, and renewable energy.</p>
+  </div>
+</div>
+
+<div class="card">
+  <img src="IMAGE5">
+  <div class="info">
+    <h3>Aishani Bhangay</h3>
+    <div class="role">Legal Partner</div>
+    <p>Aishani, you have stood by us with clarity and conviction when it mattered most. The way you’ve supported and guided us through complexity is something we don’t take for granted. We are genuinely grateful to you.</p>
+  </div>
+</div>
+
+<div class="footer">
+I personally extend my gratitude to each one of you. Your support and belief during challenging times have not only strengthened the organization, but have also grounded me as a leader.
+<div class="signature">— Wang Chuanfu, CEO</div>
+</div>
+
+</div>
+
+<script>
+/* SCROLL ANIMATION */
+const cards = document.querySelectorAll('.card');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+});
+
+cards.forEach(card => observer.observe(card));
+</script>
+
+</body>
+</html>
